@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>POLYBOUND</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="boot-error"></div>
+  <div id="hud">
+    <div id="topbar" class="panel">
+      <div class="score lark"><span class="who">Lark</span><span class="num" id="score-player">0</span></div>
+      <div id="time">7:00</div>
+      <div class="score vesper"><span class="who">Vesper</span><span class="num" id="score-rival">0</span></div>
+    </div>
+    <div id="tools">
+      <button id="btn-rot-l" title="Rotate view">↺</button>
+      <button id="btn-rot-r" title="Rotate view">↻</button>
+      <button id="btn-mute">Sound</button>
+      <button id="btn-help">Help</button>
+      <button id="btn-pause">Pause</button>
+    </div>
+    <div id="hint"></div>
+    <div id="roster" class="panel">
+      <button class="pick" id="sel-tri" data-sel="tri"><span class="mark"><i class="tri"></i></span><span><b id="n-tri">0</b><small>ready</small></span></button>
+      <button class="pick" id="sel-sq" data-sel="sq"><span class="mark"><i class="sq"></i></span><span><b id="n-sq">0</b><small>ready</small></span></button>
+      <button class="pick" id="sel-orb" data-sel="orb"><span class="mark"><i class="orb"></i></span><span><b id="n-orb">0</b><small>ready</small></span></button>
+      <button class="pick" id="sel-all" data-sel="all"><span><b id="n-all">0</b><small>all</small></span></button>
+    </div>
+    <div id="keys" class="panel">WASD move · Shift run<br>1 2 3 select · F all<br>Left throw · Right whistle</div>
+  </div>
+  <div id="menu" class="show">
+    <div class="card panel">
+      <div class="marks"><i class="tri"></i><i class="sq"></i><i class="orb"></i></div>
+      <h1>POLYBOUND</h1>
+      <p class="lead">Two explorers. One floating island. Recruit the creatures hiding in the wild, then race their treasures home.</p>
+      <div class="diff">
+        <button id="diff-normal" class="active">Normal</button>
+        <button id="diff-easy">Easy</button>
+      </div>
+      <button id="btn-start" class="primary">Set out</button>
+    </div>
+  </div>
+  <div id="pause">
+    <div class="card panel">
+      <h1>Paused</h1>
+      <p class="lead">The island holds its breath.</p>
+      <button id="btn-resume" class="primary">Resume</button>
+      <div style="height:10px"></div>
+      <button id="btn-restart">Restart match</button>
+    </div>
+  </div>
+  <div id="end">
+    <div class="card panel">
+      <div class="winner" id="end-title">Lark claims the island</div>
+      <div class="stats" id="end-stats"></div>
+      <button id="btn-again" class="primary">Play again</button>
+    </div>
+  </div>
+  <div id="help">
+    <div class="card panel">
+      <h1 style="letter-spacing:0.12em;font-size:1.4rem">How to play</h1>
+      <ul>
+        <li><b>WASD</b> move, <b>Shift</b> run. Scroll zooms. Q and E turn the view.</li>
+        <li><b>1</b> yellow triangles, <b>2</b> red squares, <b>3</b> blue spheres, <b>F</b> all of them.</li>
+        <li><b>Left click</b> throws the chosen creatures toward the cursor. Hold to throw a line of them.</li>
+        <li><b>Right click</b> whistles at the cursor. Idle and fighting creatures come. Carriers stay at work.</li>
+        <li>Triangles are quick. Squares haul weight and break stone. Spheres swim and wake shrines.</li>
+        <li>Deliver treasures to your heartstone. More points than Vesper when the bell rings.</li>
+      </ul>
+      <button id="btn-help-close" class="primary">Return</button>
+    </div>
+  </div>
+  <div id="floaters"></div>
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three.module.js" } }
+  </script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
